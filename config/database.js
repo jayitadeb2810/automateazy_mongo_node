@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 export const connectDatabase = () => {
   mongoose
     .connect(
-      `mongodb+srv://jayitadeb2810:tableDB@cluster0.gzaee.mongodb.net/TableFetchDB`
+      `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.gzaee.mongodb.net/TableFetchDB`
     )
     .then((con) =>
       console.log(

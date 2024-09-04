@@ -1,16 +1,18 @@
 import express from "express"
+import dotenv from "dotenv"
 import { connectDatabase } from "./config/database.js"
 
+dotenv.config()
+
 const app = express()
-const port = 5000
 
 app.get("/", (req, res) => {
   res.send("Hello World!")
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
   console.log(
-    `Server is running at http://localhost:${port}`
+    `Server is running at http://localhost:${process.env.PORT}`
   )
 })
 
